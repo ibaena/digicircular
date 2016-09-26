@@ -18,18 +18,29 @@ export default class Nav extends TrackerReact(Component) {
     menuWidth: 300, // Default is 240
     edge: 'left', // Choose the horizontal origin
     closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
-  }
-);
- }
+    }
+  );
+}
+
+geolocation() {
+  var geolocation = navigator.geolocation;
+    navigator.geolocation.getCurrentPosition(function(position) {
+      Session.set('lat', position.coords.latitude);
+      Session.set('lon', position.coords.longitude);
+      console.log(position.coords.latitude);
+    });
+};
 
   render() {
     return (
       <nav role="navigation" id="nav-wrapper" className="grey">
         <ul id="slide-out" className="side-nav">
           <li>
-          <form>
+          <h4 className="black-text">Locate Me!</h4>
+
             <input name="geolocation" type="text" />
-          </form>
+            <button onClick= {this.geolocation}>Geo</button>
+
           </li>
           <li><a href="#!"><i className="fa fa-newspaper-o fa-lg" aria-hidden="true"></i>Flyers</a></li>
           <li><a href="#!"><i className="fa fa-money fa-lg" aria-hidden="true"></i>Coupons</a></li>
