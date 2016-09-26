@@ -15,7 +15,7 @@ export default class Nav extends TrackerReact(Component) {
 
  componentDidMount(){
    $('.button-collapse').sideNav({
-    menuWidth: 300, // Default is 240
+    menuWidth: 250, // Default is 240
     edge: 'left', // Choose the horizontal origin
     closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
     }
