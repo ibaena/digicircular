@@ -25,9 +25,10 @@ export default class Nav extends TrackerReact(Component) {
 geolocation() {
   var geolocation = navigator.geolocation;
     navigator.geolocation.getCurrentPosition(function(position) {
+      console.log(position);
       Session.set('lat', position.coords.latitude);
       Session.set('lon', position.coords.longitude);
-      console.log(position.coords.latitude);
+
     });
 };
 
@@ -35,11 +36,10 @@ geolocation() {
     return (
       <nav role="navigation" id="nav-wrapper" className="grey">
         <ul id="slide-out" className="side-nav">
-          <li>
-          <h4 className="black-text">Locate Me!</h4>
-
-            <input name="geolocation" type="text" />
-            <button onClick= {this.geolocation}>Geo</button>
+          <li className="container">
+            <br />
+            <input name="geolocation" type="text" placeholder="Zip Code" />
+            <button className="btn-floating " onClick= {this.geolocation}><i className="fa fa-map-signs" aria-hidden="true"></i></button>
 
           </li>
           <li><a href="#!"><i className="fa fa-newspaper-o fa-lg" aria-hidden="true"></i>Flyers</a></li>
