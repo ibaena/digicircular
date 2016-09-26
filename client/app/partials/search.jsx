@@ -2,11 +2,8 @@ import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import TrackerReact from 'meteor/ultimatejs:tracker-react';
 
-import Grid from './partials/grid.jsx';
 
-
-
-export default class Home extends TrackerReact(Component) {
+export default class Search extends TrackerReact(Component) {
 
   // Note: In ES6, constructor() === componentWillMount() in React ES5
   constructor() {
@@ -21,8 +18,10 @@ export default class Home extends TrackerReact(Component) {
 
   render() {
     return (
-      <div id="home-wrapper">
-
+      <div id="search-wrapper">
+        <form>
+          <input type="text" name="search" placeholder="Search.." />
+        </form>
       </div>
 
     )

@@ -1,3 +1,12 @@
 @import "{wolves:bourbon}/bourbon";
 @import "{wolves:bitters}/base";
 @import "{wolves:neat}/neat";
+
+@import "{}/client/styles/imports/grid.scss";
+@import "{}/client/styles/imports/tab-nav.scss";
+@import "{}/client/styles/imports/sticky-footer.scss";
+
+main {
+  @include outer-container;
+
+}
