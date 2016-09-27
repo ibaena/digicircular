@@ -25,12 +25,17 @@ export default class Nav extends TrackerReact(Component) {
 geolocation() {
   var geolocation = navigator.geolocation;
     navigator.geolocation.getCurrentPosition(function(position) {
-      console.log(position);
       Session.set('lat', position.coords.latitude);
       Session.set('lon', position.coords.longitude);
-
     });
-};
+
+    let lon = Session.get('lon');
+    let lat = Session.get('lat');
+
+    Meteor.call("convertZip",  {lon: lon, lat: lat,}, (error, res) => {
+      console.log(res);
+    });
+  };
 
   render() {
     return (
