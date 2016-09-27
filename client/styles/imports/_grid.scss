@@ -1,21 +1,14 @@
 //Grid Styles
 /*Grid Styles */
 #product-grid {
-    .featured-item {
-        @include span-columns(6);
-        border: solid;
-        height: 600px;
+  .first-catalog {
+    h4 {
+      margin-top: 50px !important;
     }
-    .list-products {
-      @include span-columns(6);
-        ul {
-            li.block {
-                @include span-columns(4);
-                @include omega(3n);
-                margin-bottom: 45px;
-                border:solid;
-                height: 170px;
-            }
-        }
-    }
+  }
+}
+
+.carousel {
+  bottom: 20px;
+  height: 300px;
 }

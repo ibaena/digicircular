@@ -14,66 +14,39 @@ export default class Grid extends TrackerReact(Component) {
   }
 
  componentDidMount(){
-
+   $('.carousel').carousel();
 
  }
 
   render() {
     return (
-      <div id="product-grid">
-        <div className="featured-item">
-          <div className="featured-image">
-            <img src="http://placehold.it/400x400" />
+      <div id="product-grid" className="row">
+        <div className="first-catalog">
+            <h4 id="first-title">Catalog Title</h4>
+          <div className="col s12">
+            <div className="media-box">
+            <div className="carousel">
+  <a className="carousel-item" href="#one!"><img src="http://placehold.it/200x200" /></a>
+  <a className="carousel-item" href="#two!"><img src="http://placehold.it/200x200" /></a>
+  <a className="carousel-item" href="#three!"><img src="http://placehold.it/200x200" /></a>
+  <a className="carousel-item" href="#four!"><img src="http://placehold.it/200x200" /></a>
+  <a className="carousel-item" href="#five!"><img src="http://placehold.it/200x200" /></a>
+</div>
+            </div>
           </div>
         </div>
-        <div className="list-products">
-          <ul>
-            <li className="block">
-              <div className="product-image">
-                <img src="http://placehold.it/140x100" />
+        <div className="second-catalog">
+        <h4>Catalog Title</h4>
+          <div className="col s6">
+            <div className="media-box">
+              <a href="#!"><img src="http://placehold.it/350x150" /></a>
               </div>
-            </li>
-            <li className="block">
-              <div className="product-image">
-                <img src="http://placehold.it/140x100" />
+          </div>
+          <div className="col s6">
+            <div className="media-box">
+              <a href="#!"><img src="http://placehold.it/350x150" /></a>
               </div>
-            </li>
-            <li className="block">
-              <div className="product-image">
-                <img src="http://placehold.it/140x100" />
-              </div>
-            </li>
-            <li className="block">
-              <div className="product-image">
-                <img src="http://placehold.it/140x100" />
-              </div>
-            </li>
-            <li className="block">
-              <div className="product-image">
-                <img src="http://placehold.it/140x100" />
-              </div>
-            </li>
-            <li className="block">
-              <div className="product-image">
-                <img src="http://placehold.it/140x100" />
-              </div>
-            </li>
-            <li className="block">
-              <div className="product-image">
-                <img src="http://placehold.it/140x100" />
-              </div>
-            </li>
-            <li className="block">
-              <div className="product-image">
-                <img src="http://placehold.it/140x100" />
-              </div>
-            </li>
-            <li className="block">
-              <div className="product-image">
-                <img src="http://placehold.it/140x100" />
-              </div>
-            </li>
-          </ul>
+          </div>
         </div>
       </div>
 

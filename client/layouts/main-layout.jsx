@@ -14,9 +14,9 @@ export const MainLayout = ({content}) => (
     <Accounts />
       <Nav />
     </header>
-
-    <div>
     <SimpleFilter />
+    <div>
+
         <main className="container">
             {content}
         </main>

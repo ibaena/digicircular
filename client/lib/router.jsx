@@ -22,7 +22,7 @@ FlowRouter.route('/flyers', {
 FlowRouter.route('/admin', {
   action(){
     if (!Meteor.userId()) {
-         Bert.alert('Please login before submitting', 'danger', 'fixed-top', 'fa-frown-o');
+         Bert.alert('Please Login', 'danger', 'fixed-top', 'fa-frown-o');
          FlowRouter.redirect('/');
        }else{
          mount(AdminLayout, {content:(<Admin />)});
