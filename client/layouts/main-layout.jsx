@@ -15,7 +15,7 @@ export const MainLayout = ({content}) => (
     </header>
 
     <div>
-        <main>
+        <main className="container">
             {content}
         </main>
     </div>
