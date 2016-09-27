@@ -27,13 +27,14 @@ geolocation() {
     navigator.geolocation.getCurrentPosition(function(position) {
       Session.set('lat', position.coords.latitude);
       Session.set('lon', position.coords.longitude);
-    });
 
     let lon = Session.get('lon');
     let lat = Session.get('lat');
 
-    Meteor.call("convertZip",  {lon: lon, lat: lat,}, (error, res) => {
-      console.log(res);
+      Meteor.call("convertZip",  {lon: lon, lat: lat,}, (error, res) => {
+        console.log(res.data.results[0].formatted_address);
+        Session.set('current_location', res.data.results[0].formatted_address);
+      });
     });
   };
 
@@ -43,10 +44,11 @@ geolocation() {
         <ul id="slide-out" className="side-nav">
           <li className="container">
             <br />
-            <input name="geolocation" type="text" placeholder="Zip Code" />
-            <button className="btn-floating " onClick= {this.geolocation}><i className="fa fa-map-signs" aria-hidden="true"></i></button>
-
+            <div id="zip" className="black-text">
+              <button className="waves-effect waves-light btn zip-btn"><i className="fa fa-map-marker" onClick= {this.geolocation} aria-hidden="true"></i></button>
+            </div>
           </li>
+          <li><a href="#!" className="disabled" >{Session.get('current_location')}</a></li>
           <li><a href="#!"><i className="fa fa-newspaper-o fa-lg" aria-hidden="true"></i>Flyers</a></li>
           <li><a href="#!"><i className="fa fa-money fa-lg" aria-hidden="true"></i>Coupons</a></li>
           <li><a href="#!"><i className="fa fa-shopping-cart fa-lg" aria-hidden="true"></i>Lists</a></li>

@@ -394,15 +394,23 @@ input[type=text]:focus {
   display: inline-block !important;
 }
 
-.side-nav {
-  li:hover {
-    background: black;
-    a:hover {
-      color: white;
-    }
-  }
-}
+
 
 .list-title {
   padding-left: 10px;
+}
+#zip {
+  font-size: 11px;
+  line-height: 5px;
+}
+
+a.disabled {
+   pointer-events: none;
+   cursor: default;
+   font-size: 11px;
+}
+
+.zip-btn {
+  width: 100%;
+  background-color: blue;
 }
