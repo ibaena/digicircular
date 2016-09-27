@@ -5,7 +5,7 @@ let geoKey ='&key=AIzaSyDqFeP90M0a1uPT6AvKWqTnzi89q-oiuuA';
 Meteor.methods({
 
   convertZip: function(query){
-    console.log(query);
+
     let latitude = 'latlng=' + query.lat;
     let longitude = ',' + query.lon;
 

@@ -23,7 +23,6 @@ export default class Nav extends TrackerReact(Component) {
 }
 
 geolocation() {
-  var geolocation = navigator.geolocation;
     navigator.geolocation.getCurrentPosition(function(position) {
       Session.set('lat', position.coords.latitude);
       Session.set('lon', position.coords.longitude);
@@ -45,7 +44,7 @@ geolocation() {
           <li className="container">
             <br />
             <div id="zip" className="black-text">
-              <button className="waves-effect waves-light btn zip-btn"><i className="fa fa-map-marker" onClick= {this.geolocation} aria-hidden="true"></i></button>
+              <button className="waves-effect waves-light btn zip-btn" onClick= {this.geolocation}><i className="fa fa-map-signs" aria-hidden="true"></i></button>
             </div>
           </li>
           <li><a href="#!" className="disabled" >{Session.get('current_location')}</a></li>
