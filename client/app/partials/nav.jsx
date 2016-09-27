@@ -59,9 +59,8 @@ geolocation() {
 
             </a>
           </li>
-          <li><a href="/"><i className="fa fa-home fa-lg" aria-hidden="true"></i>Home</a></li>
-          <li><a href="/flyers"><i className="fa fa-newspaper-o fa-lg" aria-hidden="true"></i>Flyers</a></li>
-          <li><a href="#!"><i className="fa fa-money fa-lg" aria-hidden="true"></i>Coupons</a></li>
+          <li><a href="/"><i className="fa fa-newspaper-o fa-lg" aria-hidden="true"></i>Flyers</a></li>
+          <li><a href="/coupons"><i className="fa fa-money fa-lg" aria-hidden="true"></i>Coupons</a></li>
           <li><a href="#!"><i className="fa fa-shopping-cart fa-lg" aria-hidden="true"></i>Lists</a></li>
           <li><a href="#!"><i className="fa fa-calendar fa-lg" aria-hidden="true"></i>Deals</a></li>
             <div className="divider"></div>

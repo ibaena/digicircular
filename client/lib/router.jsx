@@ -6,7 +6,8 @@ import {mount} from 'react-mounter';
 import {MainLayout} from '../layouts/main-layout.jsx';
 import {AdminLayout} from '../layouts/admin-layout.jsx';
 import Home from '../app/home.jsx';
-import Flyers from '../app/flyers.jsx';
+import Coupons from '../app/coupons.jsx';
+import Alphabetical from '../app/alphabetical.jsx';
 import Admin from '../app/admin.jsx';
 
 FlowRouter.route('/', {
@@ -14,9 +15,14 @@ FlowRouter.route('/', {
     mount(MainLayout, {content:(<Home />)});
   }
 });
-FlowRouter.route('/flyers', {
+FlowRouter.route('/coupons', {
   action(){
-    mount(MainLayout, {content:(<Flyers />)});
+    mount(MainLayout, {content:(<Coupons />)});
+  }
+});
+FlowRouter.route('/alphabetical', {
+  action(){
+    mount(MainLayout, {content:(<Alphabetical />)});
   }
 });
 FlowRouter.route('/admin', {
