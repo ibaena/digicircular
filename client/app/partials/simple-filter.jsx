@@ -20,13 +20,13 @@ export default class SimpleFilter extends TrackerReact(Component) {
     return (
       <div className="simple-filter">
         <div className="btn-group">
-          <button>Featured</button>
+          <a href="/featured"><button>Featured</button></a>
         </div>
         <div className="btn-group">
-          <button>Alphabetical</button>
+          <a href="/alphabetical"><button>Alphabetical</button></a>
         </div>
         <div className="btn-group">
-          <button>Latest</button>
+          <a href="/latest"><button>Latest</button></a>
         </div>
       </div>
 

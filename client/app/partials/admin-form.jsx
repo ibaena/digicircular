@@ -2,9 +2,8 @@ import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import TrackerReact from 'meteor/ultimatejs:tracker-react';
 
-import AdminForm from './partials/admin-form.jsx';
 
-export default class Admin extends TrackerReact(Component) {
+export default class AdminForm extends TrackerReact(Component) {
 
   // Note: In ES6, constructor() === componentWillMount() in React ES5
   constructor() {
@@ -19,9 +18,10 @@ export default class Admin extends TrackerReact(Component) {
 
   render() {
     return (
-      <div id="admin-wrapper">
-          Administrator Screen
-          <AdminForm />
+      <div id="admin-form-wrapper">
+        <form>
+          <input type="text" name="search" placeholder="Search.." />
+        </form>
       </div>
 
     )

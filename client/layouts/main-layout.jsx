@@ -24,7 +24,7 @@ export const MainLayout = ({content}) => (
 
     <footer className="site-footer" id="footer" role="contentinfo">
       <div className="btn-group">
-          <button><i className="fa fa-newspaper-o fa-lg" aria-hidden="true"></i></button>
+          <a href="/flyers"><button><i className="fa fa-newspaper-o fa-lg" aria-hidden="true"></i></button></a>
       </div>
       <div className="btn-group">
           <button><i className="fa fa-share-alt fa-lg" aria-hidden="true"></i></button>

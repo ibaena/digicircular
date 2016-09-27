@@ -2,7 +2,11 @@
 //Simple Filter Styles
 
 .btn-group {
-  button {
-    cursor: pointer;
+  a {
+    text-decoration: none !important;
+    button {
+      cursor: pointer;
+
+    }
   }
 }
