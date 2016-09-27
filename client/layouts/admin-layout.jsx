@@ -7,7 +7,7 @@ import Footer from '../app/partials/footer.jsx';
 import Accounts from '../app/partials/accounts.jsx';
 import SimpleFilter from '../app/partials/simple-filter.jsx';
 
-export const MainLayout = ({content}) => (
+export const AdminLayout = ({content}) => (
 
 <div className="wrapper-main">
     <header className="navigation">
@@ -16,22 +16,12 @@ export const MainLayout = ({content}) => (
     </header>
 
     <div>
-    <SimpleFilter />
         <main className="container">
             {content}
         </main>
     </div>
 
     <footer className="site-footer" id="footer" role="contentinfo">
-      <div className="btn-group">
-          <button><i className="fa fa-newspaper-o fa-lg" aria-hidden="true"></i></button>
-      </div>
-      <div className="btn-group">
-          <button><i className="fa fa-share-alt fa-lg" aria-hidden="true"></i></button>
-      </div>
-      <div className="btn-group">
-          <button><i className="fa fa-rss fa-lg" aria-hidden="true"></i></button>
-      </div>
 
     </footer>
 
