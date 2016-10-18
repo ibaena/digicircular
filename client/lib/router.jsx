@@ -15,6 +15,11 @@ FlowRouter.route('/', {
     mount(MainLayout, {content:(<Home />)});
   }
 });
+FlowRouter.route('/:movie/:id', {
+  action(){
+    mount(MainLayout, {content:(<Alphabetical />)});
+  }
+});
 FlowRouter.route('/coupons', {
   action(){
     mount(MainLayout, {content:(<Coupons />)});

@@ -11,12 +11,44 @@ export default class Grid extends TrackerReact(Component) {
   constructor() {
     super();
 
+    if(Session.get('inTheatres') === undefined){
+   Session.set('inTheatres', []);
+    }
+    if(Session.get('popularMovies') === undefined){
+   Session.set('popularMovies', []);
+    }
+    Meteor.call("getPopularMovies",  {}, (error, res) => {
+      Session.set('popularMovies', res.data.results);
+    });
+    Meteor.call("getTheatreMovies",  {}, (error, res) => {
+      Session.set('inTheatres', res.data.results);
+    });
   }
 
  componentDidMount(){
    $('.carousel').carousel();
 
+   $(".featured-products").click(function(){
+     Bert.alert({
+       title: 'Product Added',
+       message: 'Added!',
+       type: 'info',
+       style: 'growl-top-right',
+       icon: 'fa-smile-o'
+     });
+   $(this).toggleClass('media-box-highlighted');
+});
+
+
  }
+
+currentMovies() {
+return Session.get('inTheatres');
+}
+popularMovies() {
+return Session.get('popularMovies');
+}
+
 
   render() {
     return (
@@ -24,44 +56,44 @@ export default class Grid extends TrackerReact(Component) {
         <div className="first-catalog row">
             <h4 id="first-title"> Featured Catalog Title</h4>
           <div className="col s12">
-            <div className="media-box">
+            <div className="media-box-carousel">
               <div className="carousel">
-                <a className="carousel-item" href="#one!"><img src="http://placehold.it/200x200" /></a>
-                <a className="carousel-item" href="#two!"><img src="http://placehold.it/200x200" /></a>
-                <a className="carousel-item" href="#three!"><img src="http://placehold.it/200x200" /></a>
-                <a className="carousel-item" href="#four!"><img src="http://placehold.it/200x200" /></a>
-                <a className="carousel-item" href="#five!"><img src="http://placehold.it/200x200" /></a>
+              {
+                this.currentMovies().map((movie) => {
+                  if( movie.poster_path == undefined) {
+                    return (
+                      <a className="carousel-item" href="#" key={movie.title}><img value={movie.title} className="carousel-img featured-products" src={'https://image.tmdb.org/t/p/w500'+ movie.backdrop_path}  /></a>
+                    )
+                  }else {
+                    return (
+                      <a className="carousel-item " href="#" key={movie.title}><img className="carousel-img featured-products" src={'https://image.tmdb.org/t/p/w500'+ movie.poster_path}  /></a>
+                    )
+                  }
+
+                })
+              }
+
               </div>
             </div>
           </div>
         </div>
         <div className="second-catalog row">
         <h4> Second Catalog Title</h4>
-          <div className="col s6">
-            <div className="media-box">
-              <a href="#!"><img src="http://placehold.it/200x200" /></a>
+        {
+          this.popularMovies().map((popularMovie) => {
+            return (
+              <div className="col s6" key={popularMovie.title}>
+                <div className="media-box">
+                  <a href={popularMovie.title+'/'+popularMovie.id} className="" ><img className="featured-products" src={'https://image.tmdb.org/t/p/w500'+ popularMovie.poster_path}  /></a>
+                  </div>
               </div>
-          </div>
-          <div className="col s6">
-            <div className="media-box">
-              <a href="#!"><img src="http://placehold.it/200x200" /></a>
-              </div>
-          </div>
-        </div>
-        <div className="third-catalog row">
-        <h4> Third Catalog Title</h4>
-          <div className="col s6">
-            <div className="media-box">
-              <a href="#!"><img src="http://placehold.it/200x200" /></a>
-              </div>
-          </div>
-          <div className="col s6">
-            <div className="media-box">
-              <a href="#!"><img src="http://placehold.it/200x200" /></a>
-              </div>
-          </div>
+            )
+          })
+        }
+
         </div>
       </div>
+
 
     )
   }

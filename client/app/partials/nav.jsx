@@ -46,7 +46,7 @@ geolocation() {
           <li className="container">
             <br />
             <div id="zip" className="black-text">
-              <button className="waves-effect waves-light btn zip-btn blue" onClick= {this.geolocation}><i className="fa fa-map-marker" aria-hidden="true"></i></button>
+              <button className="waves-effect waves-light btn zip-btn blue btn-flat" onClick= {this.geolocation}><i className="fa fa-map-marker" aria-hidden="true"></i></button>
             </div>
           </li>
           <li id="show-zip">
